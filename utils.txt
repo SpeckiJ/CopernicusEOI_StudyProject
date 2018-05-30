@@ -1,0 +1,21 @@
+ 
+## List all Topics
+./bin/kafka-topics --list --zookeeper localhost:2181 
+
+
+## Show Topic <TOPIC> content on console
+./bin/kafka-console-consumer \
+--zookeeper localhost:2181 \
+--topic <TOPIC> \
+--from-beginning \
+--property print.key=true
+
+
+## Install Kafka Connect Rest Extension
+## !! Confluent Location needs to be customized !!
+
+git clone https://github.com/llofberg/kafka-connect-rest.git && \
+cd kafka-connect-rest && \
+mvn package &&
+cp -r target/kafka-connect-rest-1.0-SNAPSHOT-package/share/java/ \
+<CONFLUENT BASE DIRECTORY>/share/
