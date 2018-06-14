@@ -6,7 +6,7 @@
 ## Show Topic <TOPIC> content on console
 ./bin/kafka-console-consumer \
 --zookeeper localhost:2181 \
---topic <TOPIC> \
+--topic PegelOnlineData \
 --from-beginning \
 --property print.key=true
 
@@ -19,3 +19,8 @@ cd kafka-connect-rest && \
 mvn package &&
 cp -r target/kafka-connect-rest-1.0-SNAPSHOT-package/share/java/ \
 <CONFLUENT BASE DIRECTORY>/share/
+
+
+./bin/kafka-topics --zookeeper localhost:2181 \
+   --topic PegelOnlineData --create \
+   --replication-factor 1 --partitions 1
