@@ -13,6 +13,8 @@ public class HygonDataPoint {
 	
 	private float mhw;
 	
+	private float average;
+	
 	private float level1;
 	private float level2;
 	private float level3;
@@ -87,5 +89,13 @@ public class HygonDataPoint {
 
 	public void setLevel3(float level3) {
 		this.level3 = level3;
+	}
+
+	public float getAverage() {
+		return average;
+	}
+
+	public void setAverage(float average) {
+		this.average = average;
 	}
 }

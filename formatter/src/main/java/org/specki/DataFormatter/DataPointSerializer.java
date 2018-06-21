@@ -7,11 +7,11 @@ import org.apache.kafka.common.serialization.Serializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 // Taken from https://dzone.com/articles/kafka-sending-object-as-a-message
-public class PegelOnlineDataPointSerializer implements Serializer<PegelOnlineDataPoint> {
+public class DataPointSerializer<T> implements Serializer<T> {
 
 	@Override public void configure(Map map, boolean b) {}
 
-	@Override public byte[] serialize(String arg0, PegelOnlineDataPoint arg1) {
+	@Override public byte[] serialize(String arg0, T arg1) {
 		byte[] retVal = null;
 		ObjectMapper objectMapper = new ObjectMapper();
 
