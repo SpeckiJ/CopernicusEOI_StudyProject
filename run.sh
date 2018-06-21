@@ -65,5 +65,5 @@ curl -X POST \
 }'
 
 
-cd target
+cd formatter/target
 java -jar DataFormatter-0.0.2-SNAPSHOT.jar
